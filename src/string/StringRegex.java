@@ -2,6 +2,8 @@ package string;
 
 import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 
+import java.util.Arrays;
+
 /**
  * 测试正则，及正则作为条件匹配替换字符串
  *
@@ -22,6 +24,12 @@ public class StringRegex {
         String str2 = "你个猪头，我cnm";
         String str2new = str2.replaceAll(regex1,"****");
         System.out.println(str2new);
+        /**
+         * 在此刚才进行字符串通过split()分割成字符串，形成Arrays的数组，问题是数组直接输出的方案；
+         * 得出两个要点：1.操作什么对象就要用什么类型；如果需要简单知道数组分割的是否正确，可以直接.length()输出长度;
+         */
+        System.out.println(Arrays.toString(str2.split("，")));
+        ;
     }
 
 }
