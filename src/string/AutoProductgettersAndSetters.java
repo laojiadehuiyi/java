@@ -11,7 +11,7 @@ public class AutoProductgettersAndSetters {
     public static void main(String[] args) {
         AutoProductgettersAndSetters objecta = new AutoProductgettersAndSetters(10,30);
         /**
-         * 在此我们注意java所有的类都是对象，因此我们没有定义toString方法，也是会输出下例；
+         * 在此我们注意java所有的类都是继承Object，因此我们没有定义toString方法，也是会输出下例；
          *object.toString()   输出结果为 string.AutoProductgettersAndSetters@1b6d3586
          *  输出格式：报名.+函数名+对象的内存地址;
          *在实际过程中 这个输出结果没有实质作用；
@@ -49,5 +49,27 @@ public class AutoProductgettersAndSetters {
 
     public String toString(){
         return "x=" + this.x + "，y=" + this.y;
+    }
+    public boolean equals(Object obj){
+        if (obj == null){
+            return false;
+        }
+        if (obj == this){
+            return true;
+        }
+        if (obj instanceof AutoProductgettersAndSetters){
+           AutoProductgettersAndSetters a =  (AutoProductgettersAndSetters) obj;
+           return a.getX() == this.getX() && a.getY() == this.getY();
+        }
+        /**
+         * 以上三项是重写equals的建议常用方法
+         *
+         * 同时我们在对obj对象判断时，我们要判断它的属性值是否一致；
+         */
+        if (this.getClass()==obj.getClass()){
+            return true;
+        }
+
+        return false;
     }
 }
