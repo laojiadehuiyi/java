@@ -58,7 +58,7 @@ public class AutoProductgettersAndSetters {
             return true;
         }
         if (obj instanceof AutoProductgettersAndSetters){
-           AutoProductgettersAndSetters a =  (AutoProductgettersAndSetters) obj;
+           AutoProductgettersAndSetters a =  (AutoProductgettersAndSetters) obj;//这里有一次对象强制转换
            return a.getX() == this.getX() && a.getY() == this.getY();
         }
         /**
